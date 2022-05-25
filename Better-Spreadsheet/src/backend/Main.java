@@ -18,6 +18,8 @@ public class Main {
 		
 		ProjectManager jim = new ProjectManager(); 
 		
+		
+		
 		try {
 			Connection connection = DriverManager.getConnection(url, username, password); 
 			System.out.println("Conected to the database.");
@@ -44,7 +46,7 @@ public class Main {
 					if(result.getInt("p_id") == p.getID())
 					{
 						p.addIssue(result.getString("i_description"), result.getString("i_status"), result.getInt("weekCreated"), 
-								result.getInt("weekResolved"), result.getInt("i_id"));
+								result.getInt("weekResolved"), result.getInt("i_id"), result.getInt("priority"));
 					}
 				}
 			}
